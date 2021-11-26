@@ -1,4 +1,11 @@
-const login = async (cardNumber, pin) => {
+const wakeUp = () => {
+    const url = 'https://demo-cafi.herokuapp.com/'
+    return fetch(url)
+    .then(r => console.log(r))
+    .catch(e => console.error(e))
+}
+
+const checkBalance = async (cardNumber, pin) => {
     // local testing
     // const url = `http://localhost:3000/users/account/${cardNumber}/pin/${pin}`
     // heroku testing
@@ -6,5 +13,14 @@ const login = async (cardNumber, pin) => {
     const result = await fetch(url)
     .then(async r => { return r.text() })
     .catch(e => console.error(e))
-    return document.getElementById("demo").innerHTML = result
+    const parsed = JSON.parse(result).account
+    document.getElementById("accountNumber").innerHTML = 'Account Number: ' + parsed.cardNumber
+    document.getElementById("accountBalance").innerHTML = 'Account Balance: $'+ parsed.balance
+}
+
+const clearForm = () => {
+    document.getElementById('cardNumber').value = ''
+    document.getElementById('pin').value = ''
+    document.getElementById('accountNumber').innerHTML = ''
+    document.getElementById('accountBalance').innerHTML = ''
 }
