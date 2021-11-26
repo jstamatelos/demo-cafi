@@ -1,0 +1,17 @@
+{
+  "name": "demo-cafi",
+  "version": "1.0.0",
+  "description": "Demo user login with account page",
+  "main": "nodemon index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "jarryd.stamatelos@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.15",
+    "sequelize": "^6.12.0-alpha.1"
+  }
+}
