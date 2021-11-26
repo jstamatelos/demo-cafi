@@ -13,7 +13,7 @@ app.use(pino)
 
 app.get('/', function (req, res) {
   req.log.info('get () :: attempting to open connection to server...')
-  res.send(JSON.stringify({ status: 'up and running' }))
+  res.send()
 })
 
 app.get('/users', async (req, res) => {
