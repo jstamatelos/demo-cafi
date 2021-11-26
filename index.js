@@ -14,11 +14,11 @@ app.use(pino)
 app.get('/users', async (req, res) => {
   req.log.info('getAllUsers()')
   const result = await userModel.getUsers()
-  if (!result || result.length < 1) {
+  if (!result) {
     res.statusCode = 404
     return res.send()
   } else {
-    return res.send(result)
+    return res.send(JSON.stringify(result))
   }
 })
 
@@ -26,11 +26,11 @@ app.get('/users/account/:cardNumber/pin/:pin', async (req, res) => {
   req.log.info('getUserAccount()')
   const { cardNumber, pin } = req.params
   const result = await userModel.getUserAccount(cardNumber, pin)
-  if (!result || result.length < 1) {
+  if (!result) {
     res.statusCode = 404
     return res.send()
   } else {
-    return res.send(result)
+    return res.send(JSON.stringify(result))
   }
 })
 

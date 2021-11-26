@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<title>DeMo-CaFi</title>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="./resources/styles.css">
+<script src="./resources/scripts.js" async></script>
+
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<h2>DeMo-CaFi</h2>
+
+<form>
+  <!-- <div class="imgcontainer">
+    <img src="img_avatar2.png" alt="Avatar" class="avatar">
+  </div> -->
+
+  <div class="container">
+    <label for="cardNumber"><b>Card Number</b></label>
+    <input id="cardNumber" type="text" placeholder="Enter Card Number" required>
+
+    <label for="pin"><b>PIN</b></label>
+    <input id="pin" type="password" placeholder="Enter PIN" required>
+        
+    <button a href = "javascript:void(0);" onclick="login(document.getElementById('cardNumber').value, document.getElementById('pin').value);return false;">Login</button>
+  </div>
+</form>
+
+</body>
+</html>
