@@ -1,7 +1,7 @@
-const wakeUp = () => {
+const wakeUp = async () => {
     const url = 'https://demo-cafi.herokuapp.com/'
-    return fetch(url)
-    .then(r => console.log(r))
+    await fetch(url)
+    .then(async r => { return r.text() })
     .catch(e => console.error(e))
 }
 
