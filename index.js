@@ -18,7 +18,7 @@ app.get('/users', async (req, res) => {
     res.statusCode = 404
     return res.send()
   } else {
-    return res.send(JSON.stringify(result))
+    return res.send(result)
   }
 })
 
@@ -30,7 +30,7 @@ app.get('/users/account/:cardNumber/pin/:pin', async (req, res) => {
     res.statusCode = 404
     return res.send()
   } else {
-    return res.send(JSON.stringify(result))
+    return res.send(result)
   }
 })
 
