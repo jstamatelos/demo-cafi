@@ -9,7 +9,7 @@ const options = {
   dialect: 'postgres',
   dialectOptions: {
     ssl: {
-      requre: true,
+      require: false,
       rejectUnauthorized: false
     }
   },
@@ -19,3 +19,15 @@ const options = {
 const connection = new Sequelize(options)
 module.exports.connection = connection
 module.exports.DataTypes = Sequelize.DataTypes
+
+// This is to test getting the connection - be sure to set env vars
+// const testConnection = async () => {
+//   try {
+//     await connection.authenticate()
+//     console.log('Connection has been established successfully.')
+//   } catch (error) {
+//     console.error('Unable to connect to the database:', error)
+//   }
+// }
+
+// testConnection()
